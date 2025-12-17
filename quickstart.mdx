@@ -1,0 +1,154 @@
+---
+title: Quickstart Guide
+description: Step-by-step instructions to set up your first documentation project and start managing content right away.
+---
+
+## Overview
+
+Get started with Ivan Shevtsov Documentation in minutes. Follow these steps to create an account, set up your first project, and add your initial documents. No prior experience required—you handle everything through a simple web interface or CLI.
+
+<Callout kind="tip">
+  Use the web dashboard for visual editing or the CLI for automation. Both methods sync seamlessly.
+</Callout>
+
+## Prerequisites
+
+Ensure you have:
+- A GitHub account (for project hosting)
+- Node.js `{>=18}` installed
+- Git `{>=2.30}`
+
+Verify your setup:
+
+<CodeGroup tabs="Node.js,Git">
+```bash
+node --version
+```
+
+```bash
+git --version
+```
+</CodeGroup>
+
+## Set Up Your Account
+
+Begin by signing up for Ivan Shevtsov Documentation.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit [app.ivanshevtsov.com](https://app.ivanshevtsov.com) and click **Sign Up**.
+
+    Fill in your email and create a password. Verify your email to activate the account.
+  </Step>
+
+  <Step title="Connect GitHub" icon="github">
+    In the dashboard, go to **Settings > Integrations**.
+
+    Authorize GitHub to enable repository syncing.
+
+    <Callout kind="info">
+      GitHub integration auto-deploys changes on push.
+    </Callout>
+  </Step>
+</Steps>
+
+## Create Your First Project
+
+<Tabs>
+  <Tab title="Web Dashboard" icon="browser">
+    <Steps>
+      <Step title="New Project" icon="plus">
+        Click **New Project** in the dashboard.
+
+        Enter project name: `my-docs-site`.
+
+        Select template: **MDX Documentation**.
+      </Step>
+
+      <Step title="Configure" icon="settings">
+        Set brand color to `#3B82F6`.
+
+        Choose hosting: GitHub Pages.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="CLI" icon="terminal">
+    Install the CLI and initialize:
+
+    <CodeGroup tabs="npm,yarn">
+    ```bash
+    npm create ivan-docs@latest my-docs-site
+    cd my-docs-site
+    ```
+
+    ```bash
+    yarn create ivan-docs my-docs-site
+    cd my-docs-site
+    ```
+    </CodeGroup>
+
+    Run `npm run dev` to preview locally at `http://localhost:3000`.
+  </Tab>
+</Tabs>
+
+## Add Initial Documents
+
+Populate your project with content.
+
+<Steps>
+  <Step title="Create Pages" icon="file-plus">
+    In the dashboard, navigate to **Content > Pages**.
+
+    Add `quickstart.mdx` with frontmatter:
+
+    ```yaml
+    ---
+    title: Quickstart
+    description: Your first guide.
+    ---
+    ```
+
+    Or via CLI:
+
+    ```bash
+    npm run docs:add quickstart.mdx
+    ```
+  </Step>
+
+  <Step title="Deploy" icon="upload-cloud">
+    Commit changes:
+
+    ```bash
+    git add .
+    git commit -m "Add initial docs"
+    git push origin main
+    ```
+
+    View live site at `https://yourusername.github.io/my-docs-site`.
+  </Step>
+</Steps>
+
+## Next Steps
+
+Explore more features to enhance your documentation.
+
+<Columns cols={3}>
+  <Card title="Customize Themes" icon="palette" href="/docs/themes">
+    Adjust colors, fonts, and layouts using simple config files.
+  </Card>
+
+  <Card title="API Reference" icon="api" href="/docs/api">
+    Integrate with external services via REST APIs.
+  </Card>
+
+  <Card title="Advanced Workflows" icon="git-branch" href="/docs/workflows">
+    Set up CI/CD, versioning, and multi-language support.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Build fails?** Check Node.js version and clear cache: `npm run clean`.
+  - **Sync issues?** Reauthorize GitHub in settings.
+  - **Preview not loading?** Ensure port `3000` is free.
+</Expandable>

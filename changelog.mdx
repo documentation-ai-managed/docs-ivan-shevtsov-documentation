@@ -1,0 +1,139 @@
+---
+title: Changelog
+description: History of updates and improvements to the Ivan Shevtsov Documentation platform.
+---
+
+## Overview
+
+Stay informed about the latest enhancements, bug fixes, and breaking changes in Ivan Shevtsov Documentation. You review this changelog to understand new features and plan your updates. Each release includes detailed sections on new features, improvements, and fixes.
+
+<Callout kind="info">
+  Use the tags on each release to quickly identify breaking changes, new features, or bug fixes.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Latest: v1.3.0" icon="zap" href="#v130">
+    Real-time preview and component improvements.
+  </Card>
+  <Card title="v1.2.0" icon="package" href="#v120">
+    Multi-language support and performance boosts.
+  </Card>
+  <Card title="v1.1.0" icon="settings" href="#v110">
+    Initial MDX component library.
+  </Card>
+</Columns>
+
+## Recent Releases
+
+<Update label="2024-10-20" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time preview for MDX editing with live reload.
+- Introduced `<Video>` and `<Iframe>` components for rich media embeds.
+
+## Improvements
+
+- Enhanced parsing rules for special characters like `{` and `}` in prose.
+- Optimized rendering performance by `>30%` for large documentation sites.
+
+## Bug Fixes
+
+- Fixed missing closing tags in `<Update>` components.
+- Resolved nested code block backtick mismatches.
+
+</Update>
+
+<Update label="2024-09-25" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added `<Tabs>` and `<CodeGroup>` for multi-platform examples.
+- Support for custom brand colors like `#3B82F6`.
+
+## Improvements
+
+- Better escaping for `<`, `>`, `{`, `}` in documentation text.
+
+## Bug Fixes
+
+- Corrected frontmatter YAML parsing with no blank lines allowed.
+- Fixed heading hierarchy enforcement starting from H2.
+
+</Update>
+
+<Update label="2024-08-15" description="v1.1.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Removed H1 support; all pages now start with H2 headings.
+
+## New Features
+
+- Core components: `<Callout>`, `<Card>`, `<Steps>`.
+- Mermaid diagrams as code blocks (no `<Mermaid>` component).
+
+## Bug Fixes
+
+- Initial JSX attribute validation for double quotes only.
+
+</Update>
+
+## Upgrade Guide
+
+Follow these steps to upgrade your Ivan Shevtsov Documentation site.
+
+<Steps>
+  <Step title="Review Changelog" icon="book-open">
+
+    Check the `<Update>` tags above for breaking changes.
+
+  </Step>
+  <Step title="Update Dependencies" icon="package">
+
+    <Tabs>
+      <Tab title="npm" icon="package">
+        ```bash
+        npm install ivan-shevtsov-docs@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="package">
+        ```bash
+        yarn add ivan-shevtsov-docs@latest
+        ```
+      </Tab>
+    </Tabs>
+
+  </Step>
+  <Step title="Test Components" icon="test-tube">
+
+    Verify new features like `<Columns cols={3}>` in your pages.
+
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      // Example: Real-time preview hook
+      import { usePreview } from 'ivan-shevtsov-docs';
+      const preview = usePreview({ mdx: source });
+      ```
+      ```python
+      # Example: Python integration
+      from ivan_docs import preview
+      result = preview.render(source)
+      ```
+    </CodeGroup>
+
+  </Step>
+  <Step title="Deploy" icon="rocket">
+
+    Push changes and monitor for parsing errors.
+
+  </Step>
+</Steps>
+
+## Summary of Changes
+
+| Version | Date       | Key Changes                  | Tags              |
+|---------|------------|------------------------------|-------------------|
+| v1.3.0  | 2024-10-20 | Real-time preview, media embeds | feature, improvement |
+| v1.2.0  | 2024-09-25 | Tabs, multi-language         | feature, bugfix   |
+| v1.1.0  | 2024-08-15 | Core components, no H1       | breaking, feature |

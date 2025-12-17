@@ -1,0 +1,106 @@
+---
+title: Managing Your Documentation
+description: Detailed guide on creating, editing, and maintaining documentation within your projects for optimal workflow.
+---
+
+## Overview
+
+You manage your documentation effectively by following structured workflows for editing, version control, and exporting. This guide walks you through each process using practical steps and tools. Maintain consistency and collaboration across your team with these best practices.
+
+<Columns cols={3}>
+  <Card title="Edit Docs" icon="edit-3" href="#editing-documents">
+    Update content quickly in your preferred editor.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-control">
+    Track changes with Git for seamless collaboration.
+  </Card>
+  <Card title="Export Content" icon="download" href="#exporting-content">
+    Generate static sites or PDFs from your docs.
+  </Card>
+</Columns>
+
+## Editing Documents
+
+Edit your MDX files directly in your project repository. Use visual editors or code editors for syntax highlighting and previews.
+
+<Steps>
+  <Step title="Open Your Editor" icon="edit">
+    Launch VS Code, Cursor, or any MDX-compatible editor. Open the `docs/managing-docs.mdx` file.
+  </Step>
+  <Step title="Make Changes" icon="save">
+    Update content, add components, and preview live. Ensure you escape special characters like `{variable}` with backticks.
+  </Step>
+  <Step title="Preview Locally" icon="eye">
+    Run `npm run dev` to serve your docs at `http://localhost:3000`.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Always preview changes locally before committing to catch parsing errors early.
+</Callout>
+
+## Version Control
+
+Integrate Git for tracking changes. Commit edits frequently with descriptive messages.
+
+<Tabs>
+  <Tab title="Initial Commit" icon="git-commit">
+    Stage and commit your new documentation file.
+
+    <CodeGroup tabs="bash">
+      ```bash
+      git add docs/managing-docs.mdx
+      git commit -m "docs: add managing documentation guide"
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Branch Workflow" icon="git-branch">
+    Create a feature branch for larger changes.
+
+    <CodeGroup tabs="bash">
+      ```bash
+      git checkout -b feature/update-docs-guide
+      git push origin feature/update-docs-guide
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Pull Request" icon="git-pull-request">
+    Open a PR on GitHub for review.
+
+    ```bash
+    gh pr create --title "Update docs guide" --body "Improves editing workflow"
+    ```
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Git Tips" default-open="false">
+  Use `git rebase -i` for cleaning commit history before merging. Avoid force pushes on shared branches.
+</Expandable>
+
+## Exporting Content
+
+Export your documentation for sharing or deployment. Choose formats based on your needs.
+
+| Method | Tool | Use Case |
+|--------|------|----------|
+| Static Site | Next.js Export | Deploy to Vercel/Netlify |
+| PDF | MDX to PDF | Printable guides |
+| Markdown | Pandoc | Import to other platforms |
+
+<Callout kind="info">
+  Run `npm run build` to generate a static export of your entire docs site.
+</Callout>
+
+For custom exports, use this script:
+
+```bash
+npx @mdx-js/mdx @docs/managing-docs.mdx --output docs/exported.html
+```
+
+## Best Practices
+
+- Write in active voice and use "you" for user-friendly instructions.
+- Keep pages self-contained with 5-8 components for rich experiences.
+- Test exports after major updates to ensure no parsing errors.
+
+Follow these steps to streamline your documentation workflow and keep your project knowledge accessible.

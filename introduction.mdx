@@ -1,0 +1,103 @@
+---
+title: Welcome to Ivan Shevtsov Documentation
+description: An overview of the Ivan Shevtsov Documentation platform, designed as a default space for organizing and managing project documentation efficiently.
+---
+
+## Overview
+
+Ivan Shevtsov Documentation serves as your central hub for all project documentation. You create, organize, and maintain docs in one intuitive space. This platform supports Markdown, MDX components, and version control to streamline your workflow.
+
+<Columns cols={3}>
+  <Card title="Intuitive Editor" icon="edit-3" href="/docs/editor">
+    Write docs with live preview and rich components.
+  </Card>
+  <Card title="Version History" icon="git-branch" href="/docs/versions">
+    Track changes and revert with full history.
+  </Card>
+  <Card title="Search & Navigation" icon="search" href="/docs/search">
+    Find content instantly across your entire space.
+  </Card>
+</Columns>
+
+## Key Benefits
+
+You gain several advantages from this platform:
+
+- **Collaboration**: Share docs with teams and enable real-time edits.
+- **Customization**: Tailor themes and layouts to match your brand.
+- **Export Options**: Generate PDFs or static sites for offline use.
+- **Integrations**: Connect with GitHub, Slack, and other tools.
+
+<Callout kind="tip">
+  Start small by creating your first page, then scale to full project suites.
+</Callout>
+
+## Get Oriented
+
+Follow these steps to navigate and start using the platform effectively.
+
+<Steps>
+  <Step title="Explore Sidebar" icon="menu">
+    Access pages, settings, and search from the left sidebar.
+  </Step>
+  <Step title="Create Content" icon="plus">
+    Click "New Page" to add Markdown or MDX files.
+  </Step>
+  <Step title="Preview & Publish" icon="eye">
+    Use live preview, then publish to make docs live.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="Quick Start" icon="zap">
+    Begin with the default template.
+
+    <CodeGroup tabs="Markdown,MDX">
+    ```markdown
+    # My First Doc
+    Welcome to your project.
+    ```
+    ```mdx
+    ## Enhanced Doc
+    Use components like `<Callout>` for richer content.
+    ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Navigation Tips" icon="compass">
+    Use breadcrumbs and table of contents for quick jumps.
+
+    | Section     | Purpose                  |
+    |-------------|--------------------------|
+    | Sidebar     | Page tree and search     |
+    | Top Bar     | Global actions and user  |
+    | Footer      | Links and version info   |
+  </Tab>
+  <Tab title="Customization" icon="settings">
+    Edit site config for branding.
+
+    ```yaml
+    theme:
+      primaryColor: "#3B82F6"
+    navigation:
+      docs: true
+      blog: false
+    ```
+  </Tab>
+</Tabs>
+
+<ExpandableGroup>
+  <Expandable title="Advanced Features" default-open="false">
+    Integrate custom components or set up analytics.
+
+    ```javascript
+    // Example: Custom search integration
+    import { SearchProvider } from '@components/Search';
+
+    <SearchProvider apiKey="YOUR_SEARCH_KEY">
+      Your docs content
+    </SearchProvider>
+    ```
+  </Expandable>
+</ExpandableGroup>
+
+This setup equips you to manage documentation efficiently from day one. Explore sections like editor guides and integrations next.
